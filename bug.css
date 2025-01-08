@@ -1,0 +1,17 @@
+The CSS specificity rules can sometimes lead to unexpected behavior when styles are overridden.  For example, consider the following scenario:
+
+```css
+#myElement {
+  color: blue;
+}
+
+.myClass {
+  color: red;
+}
+
+#myElement.myClass {
+  color: green;
+}
+```
+
+If an element has both `#myElement` and `.myClass` selectors applied, the `#myElement.myClass` selector will be the most specific and the element's color will be green. However, if there are additional classes or inline styles applied, the specificity might change unexpectedly.
